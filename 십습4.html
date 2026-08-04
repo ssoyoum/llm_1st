@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .header {
+      background-color: gray;
+      font-weight: bold;
+      display: flex;
+    }
+    .logo {
+      display: flex;
+      font-size: 20px;
+    }
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      padding: 0;
+    }
+    .auth-btn {
+      display: flex;
+    }
+    .header1 {
+      justify-content: space-between;
+    }
+    .header2 .menu {
+      width: 100%;
+      justify-content: space-between;
+    }
+    .header3 {
+      justify-content: space-between;
+    }
+    .header4 {
+      display: flex;
+      justify-content: space-between;
+    }
+    .header4 .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header4 .header-right {
+      display: flex;
+    }
+  </style>
+  <body>
+    <!-- ── 실습 4: Flex Header 만들기 ── -->
+    <section>
+      <h2>실습 4. Flex Header 만들기</h2>
+      <!-- Header 1: LOGO 왼쪽, MENU 3개 오른쪽 -->
+      <header class="header header1">
+        <div class="logo">LOGO</div>
+        <ul class="menu">
+          <li><a href="#">MENU1</a></li>
+          <li><a href="#">MENU2</a></li>
+          <li><a href="#">MENU3</a></li>
+        </ul>
+      </header>
+      <!-- Header 2: MENU 3개를 양 끝과 가운데로 균등 분배 -->
+      <header class="header header2">
+        <ul class="menu">
+          <li><a href="#">MENU1</a></li>
+          <li><a href="#">MENU2</a></li>
+          <li><a href="#">MENU3</a></li>
+        </ul>
+      </header>
+      <!-- Header 3: LOGO 왼쪽 · MENU 가운데 · LOGIN 오른쪽 -->
+      <header class="header header3">
+        <div class="logo">LOGO</div>
+        <ul class="menu">
+          <li><a href="#">MENU1</a></li>
+          <li><a href="#">MENU2</a></li>
+          <li><a href="#">MENU3</a></li>
+        </ul>
+        <button class="auth-btn">LOGIN</button>
+      </header>
+      <!-- Header 4 (선택): LOGO+MENU 왼쪽 묶음, LOGIN·SIGNUP 오른쪽 묶음 -->
+      <header class="header header4">
+        <div class="header-left">
+          <div class="logo">LOGO</div>
+          <ul class="menu">
+            <li><a href="#">MENU1</a></li>
+            <li><a href="#">MENU2</a></li>
+            <li><a href="#">MENU3</a></li>
+          </ul>
+        </div>
+        <div class="header-right">
+          <button class="auth-btn">LOGIN</button>
+          <button class="auth-btn">SIGNUP</button>
+        </div>
+      </header>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .item {
+        width: 60px;
+        height: 60px;
+      }
+
+      .s12-items {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: 80px;
+        place-items: center;
+        background-color: lightgray;
+      }
+
+      .s12-content {
+        display: grid;
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: 60px;
+        height: 140px;
+        place-items: center;
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h2>섹션 12. place-items / place-content</h2>
+      <p>place-items: center (셀 안 정렬)</p>
+      <div class="s12-items">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div>
+      <p>place-content: center (그리드 전체 정렬)</p>
+      <div class="s12-content">
+        <div class="cell">1</div>
+        <div class="cell">2</div>
+        <div class="cell">3</div>
+      </div>
+    </section>
+  </body>
+</html>
