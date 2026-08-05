@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border-radius: 100%;
+        border: 2px solid black;
+      }
+
+      .P {
+        position: relative;
+        width: 1000px;
+        height: 1000px;
+        border: 0;
+      }
+
+      .D1 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 200px;
+        bottom: 500px;
+      }
+      .D2 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 350px;
+        bottom: 520px;
+      }
+      .D3 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 450px;
+        bottom: 540px;
+      }
+      .D4 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 550px;
+        bottom: 560px;
+      }
+      .D5 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 260px;
+        top: 290px;
+        z-index: 200;
+      }
+      .D6 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 280px;
+        top: 300px;
+        background-color: black;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="box P">
+        <div class="box D1"></div>
+        <div class="box D2"></div>
+        <div class="box D3"></div>
+        <div class="box D4"></div>
+        <div class="box D5"></div>
+        <div class="box D6"></div>
+      </div>
+    </section>
+  </body>
+</html>

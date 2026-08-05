@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 80px;
+            height: 80px;
+            background-color: lightblue;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+
+        .M{
+            color: white;
+            font-size: 14px;
+        }
+        .M:hover{
+            transform: translate(40px, 100px) rotate(38deg) scale(1.5);
+            background-color: rgb(0, 0, 0);
+        }
+
+        .H{
+            color:red;
+            font-size: 14px;    
+        }
+        .stage{
+           perspective: 500px;
+        }
+        .S:hover{
+
+            background-color: rgb(188, 32, 133);
+            transform:  
+            rotateX(30deg)
+            rotateY(30deg) 
+            rotateZ(30deg) 
+            scale(1.5)
+            skew(20deg, 20deg);
+            margin:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>섹션 11</h2>
+        <div class="box M">이동</div>
+        <p class="H">힌트</p>
+    </section>
+
+        <section>
+        <h2>섹션 5</h2>
+        <div class="stage">
+        <div class="box S">이동</div>
+        </div>
+        <p class="H">힌트</p>
+    </section>
+</body>
+</html>

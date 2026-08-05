@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        .s13-frame{
+            height: 140px;
+            border: 1px solid black;
+            overflow: auto;
+            margin-bottom: 10px;
+            background-color: aliceblue;
+            background-image: url(./스크린샷\ 2025-04-12\ 154834.png);
+            background-attachment: fixed;
+            background-position: center 10px;
+            background-repeat: no-repeat;
+        }
+        .s13-local{
+            height: 140px;
+            border: 1px solid black;
+            overflow: auto;
+            margin-bottom: 10px;
+            background-image: url(./스크린샷\ 2025-04-12\ 154834.png);
+            background-attachment: local;
+            background-position: center 10px;
+        }
+
+        .s14-base{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            background-image: url(./스크린샷\ 2025-04-12\ 154834.png);
+            background-repeat: no-repeat;
+        }
+        .s14-cover{
+            background-size: cover;
+        }
+        .s14-contain{
+            background-size: contain;
+        }
+        .s14-pxr{
+            background-size: 200px 40px;
+        }
+    </style>
+<body>
+    <section>
+    <h2>섹션 13</h2>
+    <p>배경 고정</p>
+    <div class="s13-frame">
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        </section>
+    </div>
+    <section>
+        <h2>섹션 13</h2>
+    <p>배경 고정</p>
+        <div class="s13-frame s13-local">
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        <p>내용</p>
+        </section>
+    </div>
+
+    <section>
+        <h2>섹션 14</h2>
+        <p>cover</p>
+        <div class="s14-base s14-cover"> 덮음</div>
+
+        <p>contain</p>
+        <div class="s14-base s14-contain"> 포함</div>
+
+        <p>200px 40px</p>
+        <div class="s14-base s14-pxr"> 덮음
+    </section>
+</body>
+</html>

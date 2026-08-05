@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 80px;
+        height: 80px;
+        background-color: lightblue;
+        border: 2px solid black;
+        text-align: center;
+        line-height: 80px;
+      }
+      .s1-box {
+        position: static;
+      }
+      .s2-moved {
+        position: static;
+        background-color: red;
+        top: 20px;
+        left: 40px;
+      }
+
+      .s3-parent {
+        position: relative;
+        background-color: yellow;
+        top: 20px;
+        right: 20px;
+      }
+      .s3-child {
+        position: absolute;
+        background-color: yellow;
+        top: 20px;
+        right: 20px;
+      }
+      .s4-fixed {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <!-- 섹션 1 : position: static -기본 흐름  -->
+      <h2>position: static -기본 흐름</h2>
+      <div class="box s1-box">1</div>
+      <div class="box s1-box">2</div>
+      <div class="box s2-moved">3</div>
+    </section>
+
+    <section>
+      <h2>섹션 3</h2>
+      <div class="s3-parent">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box s3-child">3</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>섹션4</h2>
+      <p>스크롤</p>
+      <div class="box s4-fixed">fixed 배지</div>
+    </section>
+  </body>
+</html>

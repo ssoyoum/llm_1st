@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 800px;
+        height: 500px;
+        background-color: lightblue;
+        border: 2px solid black;
+        text-align: center;
+        line-height: 80px;
+        background-image: url(https://www.nicepng.com/png/full/317-3179513_21-.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+    }
+    .d1{
+        background-size: auto;
+        background-repeat: repeat-x
+    }
+    .d2{
+        background-size: contain;
+        background-position: 100px 30px;
+    }
+    .d3{
+        background-size: cover;
+        background-position: -250px -250px;
+        background-attachment: local;
+    }
+
+
+</style>
+<body>
+    <h2>1번</h2>
+    <div class="box d1"></div>
+    <h2>2번</h2>
+    <div class="box d2"></div>
+    <h2>3번</h2>
+    <div class="box d3"></div>
+</body>
+</html>

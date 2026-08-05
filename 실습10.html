@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 80px;
+            height: 80px;
+            background-color: lightblue;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 80px;
+
+
+        }
+
+        .parent{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 2px solid gray;
+            background-color: rgb(209, 209, 130);
+        }
+
+        .d1{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 1;
+        }
+
+        .d2{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 0;
+        }
+        .d3{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+        .span{
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2>섹션 4</h2>
+        <div class="box parent">
+        <div class="box d1">1</div>
+        <div class="box d2">2</div>
+        <div class="box d3">3</div> 
+        <span> 인라인</span>   
+            </div>
+</body>
+</html>
