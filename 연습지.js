@@ -1,8 +1,17 @@
+let age = ++age
 
-
-let mathScore = "77";
-
-let engScore = "88";
-
-let avgScore =(Number(mathScore)+Number(engScore)) /2;
-console.log(avgScore);
+if (age>20) {
+    console.log("성인")
+}
+else if (age>17) {
+    console.log(" 고등학생")
+}
+else if (age>14) {
+    console.log(" 중학생")
+}
+else if (age>8) {
+    console.log(" 초등학생")
+}
+else if (age>0) {
+    console.log(" 유아")
+};
