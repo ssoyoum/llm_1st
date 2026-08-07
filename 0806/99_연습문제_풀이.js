@@ -86,12 +86,12 @@ console.log("===== 문제 5 =====");
 let stock = 100;
 // TODO: 여기에 작성
 let input = 25
-let sell = 85
-let retrun = 1
+let sell = 40
+let return = 1
 console.log(`
   입고 후 재고 : ${stock+input}
   판매 후 재고 : ${stock-sell}
-  반품 후 재고 : ${stock-sell+retrun}
+  반품 후 재고 : ${stock-sell+return}
   `
 )
 // ═══ 문제 6 ═══ 비교 · 논리 연산자 [응용]
@@ -111,11 +111,11 @@ const isPowerOn = true;
 // TODO: 여기에 작성
 
 let isSpaceOk = drinkCount<80
-let isTempOk =3<=fridgeTemp & fridgeTemp<=5
+let isTempOk =3>=fridgeTemp && fridgeTemp<=5
 console.log(`
   공간 여유: ${isSpaceOk}
   온도 적정: ${isTempOk}
-  채우기 가능: ${isSpaceOk||isTempOk||isPowerOn}
+  채우기 가능: ${isSpaceOk&&isTempOk&&isPowerOn}
   `)
 
 // ═══ 문제 7 ═══ [도전] 객체와 배열 접근 종합
