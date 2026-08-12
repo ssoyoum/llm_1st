@@ -51,6 +51,14 @@ for (const key in user) {
 //     for...in  → 객체의 '이름'
 
 // ✏️ 직접 해보기 1 — 객체를 만들고 for...in 으로 "이름: 값" 을 출력해 보세요.
+const user ={ 
+name : 박소영
+};
+
+for (const key in user){
+console.log(`${key}: ${user[key]}`);
+
+}
 
 
 // ── 섹션 2: Object.keys — 이름들을 배열로 ──
