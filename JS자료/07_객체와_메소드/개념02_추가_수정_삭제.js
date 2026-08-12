@@ -61,7 +61,8 @@ console.log(product);
 // 출력: { price: 10000, count: 3, total: 30000 }
 
 // ✏️ 직접 해보기 2 — product 의 price 를 20000 으로 바꾸고 출력해 보세요.
-
+product.price =20000
+console.log(product);
 
 // ── 섹션 3: 삭제하기 ──
 
