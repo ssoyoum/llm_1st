@@ -48,7 +48,9 @@ fruits.forEach((fruit) => console.log(fruit));
 
 // ✏️ 직접 해보기 1 — 숫자 배열 [10, 20, 30] 을 forEach 로 출력해 보세요.
 
+const num11 = [10, 20, 30];
 
+num11.forEach((n) => console.log(n));
 // ── 섹션 2: 인덱스도 받을 수 있다 ──
 
 // 콜백의 두 번째 매개변수로 인덱스가 넘어옵니다.
