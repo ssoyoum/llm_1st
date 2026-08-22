@@ -238,7 +238,7 @@ const products16 = [
 // 6000
 
 // TODO: 여기에 코드를 쓰세요
-
+console.log(products16[1].name,products16[2].price);
 
 // ───── 문제 17 ───── (개념05 객체 배열 반복)
 // products16 을 for...of 로 돌면서 "이름 가격원" 을 한 줄씩 출력하세요.
@@ -251,8 +251,15 @@ const products16 = [
 // 품절: 라떼
 
 // TODO: 여기에 코드를 쓰세요
+for (const product of products16) {
+  console.log(`${product.name} ${product.price}원`);
+}
 
-
+for (const product of products16) {
+  if (product.stock === 0) {
+    console.log(`품절: ${product.name}`);
+  }
+}
 // ───── 문제 18 ───── [응용]
 // 아래 장바구니에서 각 줄과 합계를 출력하세요.
 // 각 줄의 금액은 price × count 입니다.
