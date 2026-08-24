@@ -174,7 +174,7 @@
       // 화면 ① 을 보세요. 같은 Greet 인데 두 줄의 이름이 다릅니다.
 
       // ✏️ 직접 해보기 1 — <Greet name="박지훈" /> 을 화면 ① 상자에 한 줄 더 넣어 보세요.
-
+      <Greet name="박지훈" />
       // ── 섹션 2: props 는 객체 하나로 옵니다 ──
 
       // 넘긴 값들이 각각 매개변수로 오는 것이 아닙니다.
@@ -186,7 +186,7 @@
 
         return (
           <p>
-            {props.name} / {props.age}세
+            {props.name} / {props.age} 세/{props.city}
           </p>
         );
       }
@@ -227,7 +227,7 @@
         // 콘솔: number string
         console.log(typeof props.hot, Array.isArray(props.tags));
         // 콘솔: boolean true
-
+        console.log(typeof props.count);;
         return (
           <p>
             {props.name} {props.price}원 (문자열로 넘긴 것: {props.priceText})
@@ -398,25 +398,31 @@
               <div className="output">
                 <Greet name="김민준" />
                 <Greet name="이서연" />
+                <Greet name="박지훈" />
               </div>
             </div>
 
             <div className="demo">
               <h3>② props 는 객체 하나 (콘솔도 함께 보세요)</h3>
               <div className="output">
-                <ShowProps name="이서연" age={22} />
+                <ShowProps name="이서연" age={22} city="부산" />
+                
               </div>
             </div>
 
             <div className="demo">
               <h3>③ 중괄호가 필요한 값들</h3>
               <div className="output">
-                <TypeCheck
+                <TypeCheck 
+                  count ={2}
                   name="아메리카노"
                   price={4000}
                   priceText="4000"
                   hot={true}
-                  tags={["인기", "따뜻함"]}
+                  tags={["인기", "따뜻함"]
+                  
+
+                  }
                 />
               </div>
             </div>
@@ -426,12 +432,13 @@
               <MenuItem name="아메리카노" price={4000} />
               <MenuItem name="라떼" price={4500} />
               <MenuItem name="케이크" price={6000} />
+              <MenuItem name="삼각김밥" price={1200} />
             </div>
 
             <div className="demo">
               <h3>⑤ 아무것도 안 넘겼을 때</h3>
               <div className="output">
-                <NoProps />
+                <NoProps name="박지훈" />
               </div>
             </div>
 
