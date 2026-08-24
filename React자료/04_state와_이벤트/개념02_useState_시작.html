@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -98,14 +98,13 @@
 
     <p class="guide">
       이 파일은 브라우저로 <strong>더블클릭</strong>해서 엽니다.
-      <strong>F12 → Console</strong> 도 함께 보세요.
-      <br /><br />
+      <strong>F12 → Console</strong> 도 함께 보세요. <br /><br />
       <strong>HTML 과 CSS 는 몰라도 됩니다.</strong> 위쪽
       <code>&lt;style&gt;</code> 은 화면 모양을 만드는 코드입니다.
       <code>&lt;script type="text/babel"&gt;</code> 안부터 읽으세요.
       <br /><br />
-      이 파일의 앞부분은 <strong>일부러 안 되는 코드</strong>입니다. 화면이 안 바뀌는 것이
-      정상입니다. 왜 안 되는지 본 다음에 고칩니다.
+      이 파일의 앞부분은 <strong>일부러 안 되는 코드</strong>입니다. 화면이 안
+      바뀌는 것이 정상입니다. 왜 안 되는지 본 다음에 고칩니다.
     </p>
 
     <div id="root"></div>
@@ -247,6 +246,11 @@
           console.log("setCount 를 불렀습니다. 곧 화면이 따라옵니다.");
           // 콘솔: setCount 를 불렀습니다. 곧 화면이 따라옵니다.
         }
+        function handleMinus() {
+          if (count > 0) {
+            setCount(count - 1);
+          }
+        }
 
         return (
           <div className="demo">
@@ -257,6 +261,7 @@
             <button id="btnGoodUp" onClick={handleClick}>
               +1
             </button>
+            <button onClick={handleMinus}>-1</button>
           </div>
         );
       }
@@ -548,23 +553,31 @@
       <h2>정리</h2>
       <ol>
         <li>
-          보통 변수는 바꿔도 화면이 안 바뀝니다. 컴포넌트 함수를 다시 실행하지 않기
-          때문입니다.
+          보통 변수는 바꿔도 화면이 안 바뀝니다. 컴포넌트 함수를 다시 실행하지
+          않기 때문입니다.
         </li>
         <li>
           컴포넌트 안의 보통 변수는 다시 그릴 때마다 처음 값으로 되돌아갑니다.
         </li>
         <li>
-          <strong>const [값, set값] = useState(시작값)</strong> 한 줄이 그 두 문제를 함께
-          해결합니다.
+          <strong>const [값, set값] = useState(시작값)</strong> 한 줄이 그 두
+          문제를 함께 해결합니다.
         </li>
         <li>
-          값을 바꿀 때는 대입이 아니라 <strong>set 함수</strong>를 부릅니다. 그러면 React 가
-          다시 그립니다.
+          값을 바꿀 때는 대입이 아니라 <strong>set 함수</strong>를 부릅니다.
+          그러면 React 가 다시 그립니다.
         </li>
-        <li>대괄호는 JS자료 09단원의 배열 구조분해입니다. 새 문법이 아닙니다.</li>
-        <li>시작값은 맨 처음 그릴 때만 쓰입니다. 되돌리려면 set 으로 직접 넣습니다.</li>
-        <li>state 는 컴포넌트마다 따로 생깁니다. 같은 컴포넌트를 둘 놓으면 값도 둘입니다.</li>
+        <li>
+          대괄호는 JS자료 09단원의 배열 구조분해입니다. 새 문법이 아닙니다.
+        </li>
+        <li>
+          시작값은 맨 처음 그릴 때만 쓰입니다. 되돌리려면 set 으로 직접
+          넣습니다.
+        </li>
+        <li>
+          state 는 컴포넌트마다 따로 생깁니다. 같은 컴포넌트를 둘 놓으면 값도
+          둘입니다.
+        </li>
       </ol>
     </div>
   </body>
