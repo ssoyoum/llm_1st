@@ -277,7 +277,11 @@ const cart16 = [
 // 합계 23000원
 
 // TODO: 여기에 코드를 쓰세요
-
+let sum16=0
+for (const item16 of cart16) {
+  console.log(`${item16.name} x ${item16.count}= ${item16.price* item16.count}원`);
+    sum16+=item16.price*item16.count
+}console.log(`합계 ${sum16}원`);
 
 // ───── 문제 19 ───── [도전]
 // 아래 학생 목록에서 평균 점수가 가장 높은 학생의 이름과 평균을 출력하세요.
@@ -294,6 +298,25 @@ const students17 = [
 
 // TODO: 여기에 코드를 쓰세요
 
+let maxAvg = 0;
+let maxName = "";
+
+for (const student of students17) {
+  let sum17 = 0;
+
+  for (const score of student.scores) {
+    sum17 += score;
+  }
+
+  let avg17 = sum17 / student.scores.length;
+
+  if (avg17 > maxAvg) {
+    maxAvg = avg17;
+    maxName = student.name;
+  }
+}
+
+console.log(`${maxName} ${maxAvg.toFixed(1)}`);
 
 // ───── 문제 20 ───── (에러 확인 — 맨 마지막)
 // 아래 두 줄의 주석을 풀고 실행해서 어떤 에러가 나는지 확인하세요.
