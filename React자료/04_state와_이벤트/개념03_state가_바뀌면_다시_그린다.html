@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -98,14 +98,13 @@
 
     <p class="guide">
       이 파일은 브라우저로 <strong>더블클릭</strong>해서 엽니다.
-      <strong>F12 → Console</strong> 도 함께 보세요.
-      <br /><br />
+      <strong>F12 → Console</strong> 도 함께 보세요. <br /><br />
       <strong>HTML 과 CSS 는 몰라도 됩니다.</strong> 위쪽
       <code>&lt;style&gt;</code> 은 화면 모양을 만드는 코드입니다.
       <code>&lt;script type="text/babel"&gt;</code> 안부터 읽으세요.
       <br /><br />
-      이 파일은 <strong>콘솔이 주인공</strong>입니다. 버튼을 누를 때마다 콘솔에 줄이
-      몇 개씩 늘어나는지 세어 보세요.
+      이 파일은 <strong>콘솔이 주인공</strong>입니다. 버튼을 누를 때마다 콘솔에
+      줄이 몇 개씩 늘어나는지 세어 보세요.
     </p>
 
     <div id="root"></div>
@@ -197,7 +196,7 @@
       function CompareVars() {
         const [saved, setSaved] = useState(0);
 
-        let normal = 0; // ← 이 줄이 렌더링마다 다시 실행됩니다
+        let normal = 100; // ← 이 줄이 렌더링마다 다시 실행됩니다
 
         function handleClick() {
           normal = normal + 1; // 보통 변수를 올려 봅니다
@@ -299,10 +298,12 @@
       function Child() {
         console.log("   └ Child 도 다시 실행되었습니다");
         // 콘솔:    └ Child 도 다시 실행되었습니다
-
-        return <div className="output">저는 자식입니다. state 가 없습니다.</div>;
+        outsideCount += 1;
+        return (
+          <div className="output">저는 자식입니다. state 가 없습니다.</div>
+        );
       }
-
+      let outsideCount = 0;
       function Parent() {
         const [n, setN] = useState(0);
 
@@ -511,17 +512,27 @@
       <h2>정리</h2>
       <ol>
         <li>
-          set 함수를 부르면 그 컴포넌트 함수가 <strong>처음부터 다시 실행</strong>됩니다. 이
-          일을 렌더링이라고 합니다.
+          set 함수를 부르면 그 컴포넌트 함수가
+          <strong>처음부터 다시 실행</strong>됩니다. 이 일을 렌더링이라고
+          합니다.
         </li>
-        <li>다시 실행될 때 useState 는 시작값이 아니라 <strong>기억해 둔 값</strong>을 줍니다.</li>
-        <li>함수 안의 보통 변수는 매번 새로 만들어집니다. state 만 남습니다.</li>
+        <li>
+          다시 실행될 때 useState 는 시작값이 아니라
+          <strong>기억해 둔 값</strong>을 줍니다.
+        </li>
+        <li>
+          함수 안의 보통 변수는 매번 새로 만들어집니다. state 만 남습니다.
+        </li>
         <li>새 값이 지금 값과 같으면 React 는 다시 그리지 않습니다.</li>
         <li>부모가 다시 그려지면 그 안의 자식들도 다시 실행됩니다.</li>
         <li>
-          다시 그린다고 화면을 새로 만들지 않습니다. 달라진 곳만 실제 화면에 반영합니다.
+          다시 그린다고 화면을 새로 만들지 않습니다. 달라진 곳만 실제 화면에
+          반영합니다.
         </li>
-        <li>set 함수는 이벤트 핸들러 안에서만 부릅니다. 렌더링 중에 부르면 무한 루프입니다.</li>
+        <li>
+          set 함수는 이벤트 핸들러 안에서만 부릅니다. 렌더링 중에 부르면 무한
+          루프입니다.
+        </li>
       </ol>
     </div>
   </body>
