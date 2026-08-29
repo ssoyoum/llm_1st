@@ -36,7 +36,7 @@ import Summary from "../_ui/Summary.jsx";
 // 실제로 user 를 쓰는 곳은 맨 아래 UserBadge 하나뿐입니다.
 // 나머지 셋은 받아서 그대로 아래로 넘기기만 합니다.
 
-function ShopPage({ user }) {
+function ShopPage({ user, count, toggle }) {
   console.log("ShopPage 실행 — user 를 받았지만 쓰지 않습니다");
   // 콘솔: ShopPage 실행 — user 를 받았지만 쓰지 않습니다
   return (
@@ -48,7 +48,7 @@ function ShopPage({ user }) {
   );
 }
 
-function HeaderBar({ user }) {
+function HeaderBar({ user, count, toggle }) {
   console.log("HeaderBar 실행 — user 를 받았지만 쓰지 않습니다");
   // 콘솔: HeaderBar 실행 — user 를 받았지만 쓰지 않습니다
   return (
@@ -59,7 +59,7 @@ function HeaderBar({ user }) {
   );
 }
 
-function UserMenu({ user }) {
+function UserMenu({ user, count, toggle }) {
   console.log("UserMenu 실행 — user 를 받았지만 쓰지 않습니다");
   // 콘솔: UserMenu 실행 — user 를 받았지만 쓰지 않습니다
   return (
@@ -70,29 +70,46 @@ function UserMenu({ user }) {
   );
 }
 
-function UserBadge({ user }) {
+function UserBadge({ user, count, toggle }) {
   console.log("UserBadge 실행 — 여기서만 user 를 씁니다");
   // 콘솔: UserBadge 실행 — 여기서만 user 를 씁니다
   return (
     <div className="output">
       {user.name} 님 ({user.age}세)
+      {count} /{toggle ? "on" : "off"})
     </div>
   );
 }
 
 function DeepTreeDemo() {
   const [user, setUser] = useState({ name: "김민준", age: 20 });
+  const [count, setCount] = useState(0);
+  const [toggle, setToggle] = useState(true);
 
   return (
     <div>
-      <button onClick={() => setUser({ name: "이서연", age: 22 })}>
+      <button
+        onClick={() => {
+          setUser({ name: "이서연", age: 22 });
+          setCount((prev) => prev + 1);
+          setToggle(true);
+        }}
+      >
         이서연으로 로그인
       </button>
-      <button onClick={() => setUser({ name: "김민준", age: 20 })}>
+
+      <button
+        onClick={() => {
+          setUser({ name: "김민준", age: 20 });
+          setCount((prev) => prev + 1);
+          setToggle(false);
+        }}
+      >
         김민준으로 로그인
       </button>
+
       {/* 여기서 시작해서 네 단계를 지나갑니다 */}
-      <ShopPage user={user} />
+      <ShopPage user={user} count={count} toggle={toggle} />
     </div>
   );
 }
@@ -337,9 +354,9 @@ export default function Concept01PropsDrilling() {
       <h1>개념 01 — props 내려주기의 한계</h1>
 
       <p className="guide">
-        <strong>F12 → Console</strong> 을 함께 열어 두세요. 이 파일은 콘솔에 찍히는
-        줄을 세어 보는 것이 핵심입니다. 개발 중에는 같은 줄이 두 번씩 찍힙니다
-        (StrictMode — 정상입니다).
+        <strong>F12 → Console</strong> 을 함께 열어 두세요. 이 파일은 콘솔에
+        찍히는 줄을 세어 보는 것이 핵심입니다. 개발 중에는 같은 줄이 두 번씩
+        찍힙니다 (StrictMode — 정상입니다).
       </p>
 
       <div className="demo">

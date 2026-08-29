@@ -62,6 +62,7 @@ function UserPickerDemo() {
       <button onClick={() => setUserId(1)}>1번</button>
       <button onClick={() => setUserId(2)}>2번</button>
       <button onClick={() => setUserId(3)}>3번</button>
+      <button onClick={() => setUserId(4)}>4번</button>
 
       {loading ? (
         <p className="output">불러오는 중...</p>
