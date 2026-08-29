@@ -144,7 +144,11 @@ function OutsideBadge() {
   const user = useContext(UserContext);
   console.log("Provider 밖에서 꺼낸 이름: " + user.name);
   // 콘솔: Provider 밖에서 꺼낸 이름: 손님
-  return <div className="output">{user.name} 님 ({user.age}세)</div>;
+  return (
+    <div className="output">
+      {user.name} 님 ({user.age}세)
+    </div>
+  );
 }
 
 // 화면: 손님 님 (0세)
@@ -299,13 +303,24 @@ function GreetingBox() {
   const lang = useContext(LangContext);
   // useContext 를 두 번 부르면 상자 두 개에서 각각 꺼냅니다.
   const hello = lang === "ko" ? "안녕하세요" : "Hello";
+
   return (
     <div className="output">
-      {hello}, {user.name}
+      <p>
+        {hello}, {user.name}
+      </p>
+
+      <UserContext.Provider value={{ name: "김민준", age: 20 }}>
+        <InnerGreeting />
+      </UserContext.Provider>
     </div>
   );
 }
+function InnerGreeting() {
+  const user = useContext(UserContext);
 
+  return <div className="output">안쪽 자식: {user.name}</div>;
+}
 function TwoContextDemo() {
   const [lang, setLang] = useState("ko");
 
@@ -388,8 +403,9 @@ export default function Concept02ContextBasic() {
       <h1>개념 02 — Context 기본</h1>
 
       <p className="guide">
-        <strong>세 단계</strong>만 기억하세요. <code>createContext</code> 로 상자를
-        만들고, <code>Provider</code> 로 값을 넣고, <code>useContext</code> 로 꺼냅니다.
+        <strong>세 단계</strong>만 기억하세요. <code>createContext</code> 로
+        상자를 만들고, <code>Provider</code> 로 값을 넣고,{" "}
+        <code>useContext</code> 로 꺼냅니다.
         <br />
         <strong>F12 → Console</strong> 도 함께 보세요.
       </p>
