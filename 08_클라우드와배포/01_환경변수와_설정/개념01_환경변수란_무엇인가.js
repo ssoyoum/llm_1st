@@ -20,7 +20,6 @@
 //   같은 코드가 두 곳에서 다르게 동작해야 합니다.
 //   그 방법이 환경변수입니다.
 
-
 // ── 섹션 1: process.env 는 무엇인가 ──
 
 // 운영체제가 프로그램에게 건네주는 '설정 쪽지' 입니다.
@@ -35,7 +34,7 @@ console.log(typeof process.env.PATH);
 // ★ PATH 는 우리가 안 넣었는데 있습니다.
 //   운영체제가 원래부터 갖고 있는 것들입니다.
 //   `node` 라고만 쳐도 실행되는 이유가 PATH 에 node 위치가 적혀 있어서입니다.
-
+console.log("PORT =", process.env.PORT);
 
 // ── 섹션 2: ★ 값은 언제나 글자입니다 ──
 
@@ -84,7 +83,6 @@ process.env.TEST_ON = "true";
 console.log(process.env.TEST_ON === "true");
 // 출력: true
 
-
 // ── 섹션 3: 없는 값을 읽으면 ──
 
 console.log(process.env.NO_SUCH_VAR);
@@ -115,7 +113,6 @@ console.log(process.env.EMPTY_VALUE ?? "기본값");
 //
 //   환경변수에는 보통 || 가 낫습니다. "값이 비어 있으면 없는 것" 이 자연스럽습니다.
 
-
 // ── 섹션 4: 왜 코드에 직접 안 쓰나 ──
 
 const 코드에박으면 = [
@@ -141,11 +138,11 @@ const 코드에박으면 = [
 //
 //   그래서 비밀은 처음부터 코드 밖에 둡니다.
 
-
 // ── 섹션 5: 넣는 방법 세 가지 ──
 
 const 넣는법 = {
-  "① 명령 앞에 붙이기": 'PORT=4000 node server.js   (윈도우 PowerShell 은 $env:PORT="4000"; node server.js)',
+  "① 명령 앞에 붙이기":
+    'PORT=4000 node server.js   (윈도우 PowerShell 은 $env:PORT="4000"; node server.js)',
   "② .env 파일": "node --env-file=.env server.js   또는 process.loadEnvFile()",
   "③ 서버에 설정": "EC2·PM2·Docker 에 등록해 둡니다. 파일이 아예 없습니다",
 };
@@ -160,7 +157,6 @@ for (const 방법 of Object.keys(넣는법)) {
 // ★ 개발할 때는 ②, 진짜 서버에서는 ③ 을 씁니다.
 //   ③에서는 .env 파일을 아예 안 올립니다. 파일이 없으니 새어 나갈 일도 없습니다.
 //   개념02 에서 ②를, 07단원에서 ③을 다룹니다.
-
 
 // ── 섹션 6: 백엔드자료에서 이미 쓰고 있었습니다 ──
 
@@ -181,7 +177,6 @@ for (const 곳 of Object.keys(이미쓴곳)) {
 //   Express 가 이 값을 직접 봅니다. "production" 이면
 //   에러 스택을 응답에 안 넣고, 뷰 캐시를 켜는 등 동작이 달라집니다.
 //   우리가 안 읽어도 프레임워크가 읽습니다.
-
 
 // ============================================================
 // 직접 해 볼 것
@@ -207,7 +202,6 @@ for (const 곳 of Object.keys(이미쓴곳)) {
 //
 // ✏️ 직접 해보기 5 — .env 파일에 ADMIN_KEY= 라고 값 없이 적고,
 //                    || 와 ?? 로 각각 기본값을 줘 보세요. 무엇이 다른가요?
-
 
 // ── 자주 하는 실수 ──
 

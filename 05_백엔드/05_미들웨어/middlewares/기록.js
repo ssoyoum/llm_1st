@@ -23,7 +23,9 @@ function 요청기록(req, res, next) {
   res.on("finish", () => {
     const 걸린시간 = Date.now() - 시작;
     const 표시 = res.statusCode >= 400 ? "★" : " ";
-    console.log(`   └${표시}#${req.요청번호}  ${res.statusCode} — ${걸린시간}ms`);
+    console.log(
+      `   └${표시}#${req.요청번호}  ${res.statusCode} — ${걸린시간}ms`,
+    );
   });
 
   next();
